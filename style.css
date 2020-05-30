@@ -1,0 +1,63 @@
+/* 默认样式统一 */
+* {
+    /* 清除默认外边距 */
+    margin: 0;
+    /* 清除默认内边距 */
+    padding: 0;
+    /* 边框盒 */
+    box-sizing: border-box;
+}
+
+/* 心的外部容器 */
+.container-heart {
+    /* 网格布局 */
+    display: grid;
+    /* 模板搭建 */
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+    /* 外边距 */
+    margin: 100px;
+    /* 开启相对定位 */
+    position: absolute;
+    /* 动画加载时间 */
+    animation: heart 1.2s infinite alternate;
+}
+@keyframes heart {
+    0% {transform: none;}
+    100% {transform: scale(1.2);}
+}
+/* 左侧，底部，右侧公共代码 */
+.heart-bottom, .heart-right, .heart-left {
+    /* 边框 */
+    /* border: 1px solid tomato; */
+    /* 背景颜色 */
+    background-color: tomato;
+}
+/* 底部 */
+.container-heart .heart-bottom {
+    /* 旋转 移动 */
+    transform: rotate(45deg);
+    /* 定位 */
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+/* 右侧 */
+.container-heart .heart-right {
+    /* 旋转 移动 */
+    transform: rotate(45deg) translateY(70%);
+    /* 定位 */
+    grid-column-start: 3;
+    /* 圆角 */
+    border-radius: 50% 50% 0 0;
+}
+/* 左侧 */
+.container-heart .heart-left {
+    /* 旋转 移动 */
+    transform: rotate(45deg) translate(70%);
+    /* 圆角 */
+    border-radius: 50% 0 0 50%;
+}
+.container-heart:hover {
+    /* 扩大 */
+    transform: scale(1.2);
+}
